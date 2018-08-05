@@ -1,8 +1,5 @@
 __pycache__/
 changes_to_dataset.txt
 
-# exclude everything
-model/*
-
-# exception to the rule
-!model/nlp_model.py
+model/__pycache__/*
+model/__init__.py
