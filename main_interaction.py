@@ -18,14 +18,22 @@ app.layout = html.Div([
             placeholder="I feel...",
             style={'width': '50%', 'height': '100%'}
         ),
-        html.Button(id='submit-button', n_clicks=0, children='Press me and let me guess.',
-                    style={'font-size': '14px', 'marginLeft': 10}),
-    ], style={'height': '100%'}),
+        html.Br(),
+        html.Div([            
+            html.Button(id='submit-button', n_clicks=0, children='Press me and let me guess',
+                        style={'font-size': '14px', 'marginLeft': 10}),
+            html.A(
+                children=html.Button(children='Source in GitHub', style={'font-size': '14px', 'marginLeft': 10}),
+                href='https://github.com/diabetichunny/Sentiment-Analyser',
+                target='_blank'
+            )
+        ], style={'display': 'inline-block'}) 
+    ]),
     html.Br(),
     html.Div([
         html.H2(id='response', style={'color': 'Blue'})
     ])
-])
+], className='six.columns')
 
 
 @app.callback(Output('response', 'children'), [Input('submit-button', 'n_clicks')], [State('input-text-area', 'value')])
