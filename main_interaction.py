@@ -3,9 +3,10 @@ import dash_core_components as dcc
 import dash_html_components as html
 
 from dash.dependencies import Input, Output, State
-from model.nlp_model import get_model
+from sklearn.externals import joblib
 
-model = get_model()
+model = joblib.load('modelv1.pkl')
+
 app = dash.Dash()
 server = app.server
 
