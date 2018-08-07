@@ -34,7 +34,7 @@ app.layout = html.Div([
     html.Div([
         html.H2(id='response', style={'color': 'Blue'})
     ])
-])
+], className='six.columns')
 
 
 @app.callback(Output('response', 'children'), [Input('submit-button', 'n_clicks')], [State('input-text-area', 'value')])
